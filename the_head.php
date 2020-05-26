@@ -4,7 +4,7 @@ session_start();
 
 
 
-$con = mysqli_connect("localhost", "root","root","food");
+$con = mysqli_connect("localhost", "root","","food");
 
 
 if(mysqli_connect_errno()) 
