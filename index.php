@@ -1,10 +1,17 @@
+<?php
+
+include("the_head.php");
+
+?>
+
 <html>
 <head>
-    <title>Food Database</title>
+    <title>Food Donations Tracker</title>
 
     <!-- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="assets/js/bootstrap.js"></script>
+
 
     <!-- CSS  -->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
@@ -15,16 +22,15 @@
 
         <div class="top_bar">
             <div class="logo">
-                <h4 class="thetitle"><a style = "color:white;" href="index.php">Food Tracker</a></h4>
+                <h4 class="thetitle"><a style = "color:white; padding-left:10px;" href="index.php">Donated Food Tracker</a></h4>
             </div>
         </div>    
         <div class="wrapper">
             <div class="initial_choice">
-            <h3>What do you wish to donate?</h3>  <br> 
-            <button type="button" onclick="window.location.href = 'main.php';" class="btn btn-outline-dark btn-lg">Meat</button>
-            <button type="button" onclick="window.location.href = 'main.php';" class="btn btn-outline-dark btn-lg">Milk</button>
-            <button type="button" onclick="window.location.href = 'main.php';" class="btn btn-outline-dark btn-lg">Vegetables</button>
-            <button type="button" onclick="window.location.href = 'main.php';" class="btn btn-outline-dark btn-lg">Other</button>
+            <h3>Welcome to Donated Food Tracker</h3>  <br> 
+            <button type="button" onclick="window.location.href = 'main.php';" class="btn btn-outline-dark btn-lg">Main Page</button>
+            <button type="button" onclick="window.location.href = 'register_login.php';" class="btn btn-outline-dark btn-lg">Register/Login</button>
+            
             </div>    
         </div>
     </body>
