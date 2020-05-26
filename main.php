@@ -1,7 +1,9 @@
 <?php
 
+include("the_head.php");
+
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-$con = mysqli_connect("localhost", "root","","food");
+// $con = mysqli_connect("localhost", "root","","food");
 
 if(mysqli_connect_errno()) 
 {
@@ -11,21 +13,27 @@ if(mysqli_connect_errno())
 $timezone = date_default_timezone_set("America/Chicago");
 $newDate = date("m/j/Y \a\\t g:i a");
 
-$boyy = "SELECT id FROM dairy"; 
+$dairyID = "SELECT id FROM dairy"; 
        
-$re = mysqli_query($con, $boyy); 
+$re = mysqli_query($con, $dairyID); 
 $row = mysqli_num_rows($re);
 
 
 
 if(isset($_POST['post']))
 {
-     $newId = $row + 1;
-     $_POST['post_text'] = strip_tags($_POST['post_text']);
+    if (isset($_SESSION['username'])) 
+    {
+       $newId = $row + 1;
+       $_POST['post_text'] = strip_tags($_POST['post_text']);
      
-    //  mail("rob.w.gleason@gmail.com","Food Tracker Insert","hello");
-    $query = mysqli_query($con, "INSERT INTO dairy VALUES('".$newId."', '".$_POST['post_text']."', '".$newDate."','".$_POST['reg_name']."')");
-    header("Location: main.php");
+        //  mail("rob.w.gleason@gmail.com","Food Tracker Insert","hello");
+        $query = mysqli_query($con, "INSERT INTO dairy VALUES('".$newId."', '".$_POST['post_text']."', '".$newDate."','".$_POST['reg_name']."')");
+        header("Location: main.php");
+    }
+    else{
+        echo "You must be logged in to post.";
+    }   
 }
       
 ?>
@@ -39,6 +47,15 @@ if(isset($_POST['post']))
     <!-- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="assets/js/bootstrap.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167583727-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-167583727-1');
+    </script>
+
 
     <!-- CSS  -->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
@@ -47,11 +64,28 @@ if(isset($_POST['post']))
 </head>
     <body>
 
-        <div class="top_bar">
+
+        <div class="top_bar" style="clear: both;">
             <div class="logo">
-                <h4 class="thetitle"><a style = "color:white;" href="index.php">Food Tracker</a></h4>
+                <h4 class="thetitle"><u><a style = "color:white; padding-left:10px;" href="index.php">Donated Food Tracker</a></u>
+            
+                <!-- <u><a style = "color:white; float:right; margin-left:10px; margin-right:10px; margin-top:0px;" > 
+                                <i class="fas fa-sign-out-alt"></i>
+                    </a></u> -->
+
+                
+               <u> <a style = "color:white; float:right; padding-right:10px;" href="register_login.php">Register/Login</a></u>
+                   
+
+            </h4> 
             </div>
-            <h3 id="main">Welcome to Food Tracker</h3>
+          
+               
+           
+
+       
+            
+            <h3 id="main">Welcome to Donated Food Tracker</h3>
         </div>    
         <div class="wrapper">
          <br>   
@@ -103,7 +137,17 @@ if(isset($_POST['post']))
                 <textarea name="post_text" id="post_text" placeholder="Do you have something to donate?"></textarea>
                 <br>
                 <input type="submit" name="post" id="post_button" value="Post">
-                <hr>
+                
+                <?php
+                   if (isset($_SESSION['username']))   //when user logs in
+                   {
+                       echo "<h4 style=\"color:white;\">You are logged in!</h4>";
+                   }
+                   else{
+                    echo "<h4 style=\"color:white;\">You must be logged in to enter food.</h4>";
+                   }
+                   ?>
+                    <hr>
 
             </form>
 
