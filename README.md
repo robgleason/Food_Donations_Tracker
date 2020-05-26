@@ -5,6 +5,8 @@ This is the Open Source Project for the Food Donations Tracker.
 To make changes to the Master Branch, you would need to make a clone of the repository, 
 add changes, and then send them back via pull requests.
 
+It is recommended to get XAMPP to provide the PHP and Mysql environment to look at the files.
+
 To get started with Github and adding to Open Source. We recommend 
 starting here: https://github.com/firstcontributions/first-contributions.
 
