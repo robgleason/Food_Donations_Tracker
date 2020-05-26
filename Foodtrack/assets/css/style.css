@@ -1,0 +1,168 @@
+@font-face {
+    font-family: 'Bellota-Regular';
+    src: url('../fonts/Bellota-Regular.otf');
+}
+@font-face {
+    font-family: 'Bellota-BoldItallic';
+    src: url('../fonts/Bellota-BoldItalic.otf');
+}
+
+
+body {
+    line-height: 17px;
+    
+    background-color: #010101;
+}
+
+.thetitle {
+    color: #ffffff;
+    /* font-family: 'Bellota-BoldItallic'; */
+    font-family: "Times New Roman", Times, serif;
+}
+
+h3 {
+    font-family: 'Bellota-Regular';
+}
+
+.initial_choice {
+    margin: 0 auto;
+    top: 50px;
+    position: relative;
+    padding: 10px;
+    width: 75%;
+    min-width: 950px;
+    color: #ffffff;
+    text-align: center;
+}
+
+#main {
+    margin: 0 auto;
+    top: 50px;
+    position: relative;
+    padding: 10px;
+    width: 75%;
+    min-width: 950px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.wrapper {
+    margin: 0 auto;
+    top: 50px;
+    position: relative;
+    padding: 0 10px;
+    width: 75%;
+    min-width: 950px;
+}
+
+
+.btn{
+    height: 45px;
+    width: 120px;
+    background: #010101;
+    margin: 10px;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-transition: all 0.5s ease-in-out;
+    border: 0px;
+    color: #fff;
+}
+.btn:hover{
+    -webkit-transform: scale(1.1);
+    background: #ffffff;
+    color: #010101;
+}
+
+
+.column{
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px #D3D3D3;
+    z-index: -1;
+}
+
+.user_details {
+    width: 150px;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.user_details_left_right {
+    width: 125px;
+    display: inline-block;
+    position: absolute;
+}
+
+.user_details img {
+    height: 70px;
+    width: 70px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.meat {
+    margin-left: 20px;
+}
+
+.milk {
+    margin-left: 40px;
+}
+
+.vegetable {
+    margin-left: 60px;
+}
+
+.theOther {
+    margin-left: 80px;
+}
+
+
+.post_form {
+    width: 100%
+}
+
+.post_form textarea{
+    width: 80%;
+    height: 60px;
+    border-radius: 5px;
+    margin-right: 5px;
+    border: 1px solid #D3D3D3;
+    font-size: 12px;
+}
+
+.textarea:focus {
+    outline: 0;
+}
+
+.saySomething {
+    width: 220px;
+    margin-left: 20px;
+}
+
+.post_form {
+    width: 100%
+}
+
+.post_form textarea{
+    width: 80%;
+    height: 60px;
+    border-radius: 5px;
+    margin-right: 5px;
+    border: 1px solid #D3D3D3;
+    font-size: 12px;
+    padding: 5px;
+}
+
+textarea:focus {
+    outline: 0;
+}
+
+
+
+.status_post {
+    width:96%;
+    font-size: 15px;
+    padding: opx 5px;
+    min-height: 75px;
+}
